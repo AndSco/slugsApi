@@ -19,7 +19,7 @@ module.exports.getSingleAsset = async (req, res, next) => {
       $or: [{ backstageId: identifier }, { slug: identifier }],
     });
 
-    res.status(200).json(asset);
+    res.status(200).json(...asset);
   } catch (err) {
     return next(err);
   }
