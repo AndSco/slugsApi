@@ -3,7 +3,7 @@ const { getData } = require('./utils');
 
 module.exports.getSlugsFromAssetId = async (req, res, next) => {
   try {
-    const { assets } = req.body;
+    const assets = req.body;
     getData(assets).then((data) => {
       res.status(200).json(data);
     });
