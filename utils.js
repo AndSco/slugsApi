@@ -1,6 +1,7 @@
 const Asset = require('./models/asset');
+const parameterize = require('parameterize');
 
-module.exports.slugify = (label) => parameterize(label);
+const slugify = (label) => parameterize(label);
 
 const fetchAsset = async (asset) => {
   const found = await Asset.findOne({ backstageId: asset.id });
