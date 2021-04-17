@@ -8,7 +8,7 @@ const fetchAsset = async (asset) => {
   if (!found) {
     const newAsset = await Asset.create({
       backstageId: asset.id,
-      slug: slugify(asset.name),
+      slug: slugify(asset.label),
     });
     return Promise.resolve(newAsset);
   }

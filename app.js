@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8081;
 const mongo = require('./mongo');
 const { getSlugsFromAssetId, getSingleAsset } = require('./handlers');
+const Asset = require('./models/asset');
+
+// Empty DB
+Asset.remove({}, () => console.log('Emptied DB'));
 
 // BODY PARSER
 app.use(bodyParser.urlencoded({ extended: false }));
